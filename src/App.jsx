@@ -5,7 +5,7 @@ const EMAILJS_TEMPLATE = "template_4srgsrz";
 const EMAILJS_KEY = "ztjDqVGeC_Gq8smwK";
 
 const BASE_QUESTIONS = [
-  { id:"nombre_empresa", module:"Tu empresa", text:"Cual es el nombre de tu empresa?", hint:"Esto nos ayuda a personalizar tu reporte.", type:"text", placeholder:"Ej: Distribuidora Lopez..." },
+  { id:"nombre_empresa", module:"Tu empresa", text:"¿Cuál es el nombre de tu empresa?", hint:"Esto nos ayuda a personalizar tu reporte.", type:"text", placeholder:"Ej: Distribuidora López, Clínica San Juan..." },
   { id:"nombre_contacto", module:"Tu empresa", text:"¿Cuál es tu nombre y cargo?", hint:"Para saber con quién estamos hablando.", type:"text", placeholder:"Ej: María López, Gerente de Operaciones..." },
   { id:"correo_contacto", module:"Tu empresa", text:"¿Cuál es tu correo electrónico?", hint:"Te enviaremos una copia de tu reporte de diagnóstico.", type:"text", placeholder:"Ej: maria@empresa.com" },
   { id:"sector", module:"Tu empresa", text:"¿En qué sector opera tu empresa?", hint:"Selecciona el que más se acerque.", type:"options", options:["Retail / Comercio","Manufactura / Producción","Servicios profesionales","Logística / Transporte","Salud / Clínicas","Educación / Capacitación","Finanzas / Seguros","Construcción / Inmobiliaria","Recursos Humanos / Temporal","Restaurantes / Alimentos","Tecnología / Software","Agropecuario / Agroindustria","Turismo / Hotelería","Medios / Marketing","Comercio exterior","Energía / Minería","ONG / Sector público","Otro"] },
@@ -287,7 +287,7 @@ export default function App() {
         {view==="quiz" && question && (
           <div key={question.id} className="fade">
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
-              <button className="btn-back" onClick={history.length>0?goBack:()=>setView("intro")}><- {history.length>0?"Volver":"Inicio"}</button>
+              <button className="btn-back" onClick={history.length>0?goBack:()=>setView("intro")}>{"< "}{history.length>0?"Volver":"Inicio"}</button>
               <span style={{fontSize:10,color:"#333"}}>{qIndex+1} / {totalQ}</span>
             </div>
             <div style={{height:2,background:"#1a1a1a",borderRadius:2,overflow:"hidden",marginBottom:18}}>
